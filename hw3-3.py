@@ -41,12 +41,15 @@ def evaluate(train_set, test_set, classifier):
 
 # loading data
 
-spam = init_lists('enron1/spam/')
-ham = init_lists('enron1/ham/')
+for i in range(5):
+    spam = init_lists('enron' +str(i+1) +'/spam/')
+    ham = init_lists('enron' + str(i+1)  +'/ham/')
+    # combine the two lists keeping the labels
+    all_emails = [(email, 'spam') for email in spam]
+    all_emails += [(email, 'ham') for email in ham]
 
-# combine the two lists keeping the labels
-all_emails = [(email, 'spam') for email in spam]
-all_emails += [(email, 'ham') for email in ham]
+
+
 
 print (len(all_emails))
 
