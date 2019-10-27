@@ -61,3 +61,4 @@ print(all_features)
 train_set, test_set, classifier = train(all_features, 0.8)
 
 evaluate(train_set, test_set, classifier)
+classifier.show_most_informative_features(20)
