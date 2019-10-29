@@ -32,7 +32,7 @@ def train(features, samples_proportion):
     train_set, test_set = features[:train_size], features[train_size:]
     print ('Training set size = ' + str(len(train_set)) + ' emails')
     print ('Test set size = ' + str(len(test_set)) + ' emails')
-    classifier = NaiveBayesClassifier.train(train_set)
+    classifier = NaiveBayesClassifier.train(train_set, nltk.LaplaceProbDist)
     return train_set, test_set, classifier
 
 def evaluate(train_set, test_set, classifier):
